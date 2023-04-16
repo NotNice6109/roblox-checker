@@ -9,6 +9,7 @@ import socks
 import string
 from bs4 import BeautifulSoup
 import cloudscraper
+import sys
 
 # User inputs
 use_proxy = input("Use proxy? (y/n): ").lower() == 'y'
@@ -29,7 +30,7 @@ if use_capsolver:
         print(f"Error checking capsolver API key: {e}")
         use_capsolver = input("Continue without captcha solver? (y/n): ").lower() == 'y'
         if not use_capsolver:
-            exit()
+            sys.exit()
 
 # Load the wordlist
 with open(wordlist_file) as f:
@@ -63,12 +64,12 @@ if use_proxy:
             print("No proxies found in file")
             use_proxy = input("Continue without proxy? (y/n): ").lower() == 'y'
             if not use_proxy:
-                exit()
+                sys.exit()
     except Exception as e:
         print(f"Error loading proxies: {e}")
         use_proxy = input("Continue without proxy? (y/n): ").lower() == 'y'
         if not use_proxy:
-            exit()
+            sys.exit()
 
 # Set up the proxy pool to cycle through the proxies
 proxy_pool = cycle(proxies)
