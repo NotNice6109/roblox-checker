@@ -1,0 +1,78 @@
+please make a python script using https://github.com/NotNice6109/roblox-checker/blob/main/main.py from bs4 import BeautifulSoup import capsolver import socks and what i need you to do is read this code https://github.com/NotNice6109/roblox-checker/blob/main/main.py and make code like that but implement those librarys and the goal of the code is to support capsolver and socks5 rotating residential proxies and http proxies that can rotate per account checked and it is just a normal account checker for roblox and it takes wordlist.txt and in order goes each account username:pass and checks if it is valid or incorrect and if it is incorrect is either is because the password is incorrect or because unknown and it should also give the response code, here are the login get request Request URL: https://www.roblox.com/login
+Request Method: GET
+Status Code: 200 
+Remote Address: 128.116.101.3:443
+Referrer Policy: strict-origin-when-cross-origin
+access-control-allow-credentials: true
+access-control-allow-origin: https://www.roblox.com
+access-control-expose-headers: X-CSRF-TOKEN
+cache-control: private, must-revalidate
+content-encoding: gzip
+content-length: 21777
+content-security-policy: report-uri https://metrics.roblox.com/v1/csp/report?type=enforce; upgrade-insecure-requests; script-src 'self' 'unsafe-inline' roblox.com *.evidon.com *.gigya.com *.google-analytics.com *.ns1p.net adservice.google.com cdn.arkoselabs.com connect.facebook.net funcaptcha.com js.rbxcdn.com long.open.weixin.qq.com midas.gtimg.cn radar.cedexis.com res.wx.qq.com roblox-api.arkoselabs.com roblox-load-generator-configuration.s3.us-east-2.amazonaws.com s.ytimg.com sb.scorecardresearch.com static.rbxcdn.com www.google.com www.gstatic.com www.youtube.com h.online-metrix.net request.eprotect.vantivcnp.com request.eprotect.vantivpostlive.com *.googletagmanager.com *.googleadservices.com googleads.g.doubleclick.net cdn.veriff.me *.lightstep.com client-api.arkoselabs.com api.arkoselabs.com; img-src 'self' data: *.cloudfront.net *.google-analytics.com *.google.com *.kaptcha.com *.rbxcdn.com *.roblox.com *.robloxlabs.com googleads.g.doubleclick.net i.ytimg.com www.googletagmanager.com; connect-src 'self' *.roblox.com *.robloxlabs.com *.rbx.com *.rbxcdn.com *.roblox.cn *.simulpong.com *.lightstep.com *.ns1p.net  *.arkoselabs.com *.kaptcha.com *.google.com *.google-analytics.com *.doubleclick.net *.sentry.io wss://realtime.roblox.com wss://realtime.sitetest1.robloxlabs.com wss://realtime.sitetest2.robloxlabs.com wss://realtime.sitetest3.robloxlabs.com wss://realtime-signalr.roblox.com *.braintree-api.com *.braintreegateway.com d1q2u37vreaobr.cloudfront.net funcaptcha.com;
+content-type: text/html; charset=utf-8
+cross-origin-opener-policy: same-origin-allow-popups
+date: Mon, 17 Apr 2023 02:29:22 GMT
+nel: {"report_to":"network-errors","max_age":604800,"success_fraction":0.1,"failure_fraction":1}
+p3p: CP="CAO DSP COR CURa ADMa DEVa OUR IND PHY ONL UNI COM NAV INT DEM PRE"
+report-to: {"group":"network-errors","max_age":604800,"endpoints":[{"url":"https://ncs.roblox.com/upload"}]}
+strict-transport-security: max-age=31536000; includeSubdomains
+vary: Accept-Encoding
+x-frame-options: SAMEORIGIN
+:authority: www.roblox.com
+:method: GET
+:path: /login
+:scheme: https
+accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+accept-encoding: gzip, deflate, br
+accept-language: en-US,en;q=0.9
+cache-control: max-age=0
+cookie: GuestData=UserID=-1181727028; RBXcb=RBXViralAcquisition=true&RBXSource=true&GoogleAnalytics=true; __utmz=200924205.1670248841.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); _gcl_au=1.1.1297035058.1678224041; _ga_SFYEMVLMML=GS1.1.1678835373.1.1.1678836266.0.0.0; .RBXIDCHECK=a9f232a7-bd83-4f3e-a350-0391e66336a0; RBXSource=rbx_acquisition_time=4/15/2023 12:28:17 PM&rbx_acquisition_referrer=&rbx_medium=Direct&rbx_source=&rbx_campaign=&rbx_adgroup=&rbx_keyword=&rbx_matchtype=&rbx_send_info=1; _ga=GA1.1.741609866.1671738055; _ga_BK4ZY0C59K=GS1.1.1681579738.5.1.1681579961.0.0.0; RBXEventTrackerV2=CreateDate=4/15/2023 6:46:38 PM&rbxid=4514662015&browserid=155767098659; rbx-ip2=; RBXImageCache=timg=kDVZ23NngG3Anb_sJg06aHidxONObdTiTsOX_I5Afrvt8Eb1ocAMEhGbLkFzjJSf8-L8FzWOd7KGoiF9n8h1O_Q5s_5smx-5Qid_oix-pCoqDvHnBdTFHlxEr5O3IVQYrilLswXbeYtE3WuUu1Xr2mSn7hjziZkkx0cEOvXDOFrqGuPIfx9RuslnbOZrruFQr8m3oTrLcUHV60WktqVIjg; __utma=200924205.7146390.1670248841.1681633984.1681698552.51; __utmb=200924205.0.10.1681698552; __utmc=200924205
+referer: https://www.roblox.com/
+sec-ch-ua: "Chromium";v="112", "Microsoft Edge";v="112", "Not:A-Brand";v="99"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: document
+sec-fetch-mode: navigate
+sec-fetch-site: same-origin
+sec-fetch-user: ?1
+upgrade-insecure-requests: 1
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 Edg/112.0.1722.48 and the login post request Request URL: https://auth.roblox.com/v2/login
+Request Method: POST
+Status Code: 403 
+Remote Address: 128.116.101.3:443
+Referrer Policy: strict-origin-when-cross-origin
+access-control-allow-credentials: true
+access-control-allow-origin: https://www.roblox.com
+cache-control: no-cache
+content-length: 128
+content-type: application/json
+date: Mon, 17 Apr 2023 02:29:40 GMT
+expires: -1
+nel: {"report_to":"network-errors","max_age":604800,"success_fraction":0.001,"failure_fraction":1}
+p3p: CP="CAO DSP COR CURa ADMa DEVa OUR IND PHY ONL UNI COM NAV INT DEM PRE"
+pragma: no-cache
+report-to: {"group":"network-errors","max_age":604800,"endpoints":[{"url":"https://ncs.roblox.com/upload"}]}
+roblox-machine-id: CHI1-WEB7725
+strict-transport-security: max-age=3600
+x-frame-options: SAMEORIGIN
+:authority: auth.roblox.com
+:method: POST
+:path: /v2/login
+:scheme: https
+accept: application/json, text/plain, */*
+accept-encoding: gzip, deflate, br
+accept-language: en-US,en;q=0.9
+content-length: 57
+content-type: application/json;charset=UTF-8
+cookie: GuestData=UserID=-1181727028; __utmz=200924205.1670248841.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); _gcl_au=1.1.1297035058.1678224041; _ga_SFYEMVLMML=GS1.1.1678835373.1.1.1678836266.0.0.0; .RBXIDCHECK=a9f232a7-bd83-4f3e-a350-0391e66336a0; RBXSource=rbx_acquisition_time=4/15/2023 12:28:17 PM&rbx_acquisition_referrer=&rbx_medium=Direct&rbx_source=&rbx_campaign=&rbx_adgroup=&rbx_keyword=&rbx_matchtype=&rbx_send_info=1; _ga=GA1.1.741609866.1671738055; _ga_BK4ZY0C59K=GS1.1.1681579738.5.1.1681579961.0.0.0; RBXEventTrackerV2=CreateDate=4/15/2023 6:46:38 PM&rbxid=4514662015&browserid=155767098659; rbx-ip2=; RBXImageCache=timg=kDVZ23NngG3Anb_sJg06aHidxONObdTiTsOX_I5Afrvt8Eb1ocAMEhGbLkFzjJSf8-L8FzWOd7KGoiF9n8h1O_Q5s_5smx-5Qid_oix-pCoqDvHnBdTFHlxEr5O3IVQYrilLswXbeYtE3WuUu1Xr2mSn7hjziZkkx0cEOvXDOFrqGuPIfx9RuslnbOZrruFQr8m3oTrLcUHV60WktqVIjg; __utma=200924205.7146390.1670248841.1681633984.1681698552.51; __utmb=200924205.0.10.1681698552; __utmc=200924205
+origin: https://www.roblox.com
+referer: https://www.roblox.com/
+sec-ch-ua: "Chromium";v="112", "Microsoft Edge";v="112", "Not:A-Brand";v="99"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: empty
+sec-fetch-mode: cors
+sec-fetch-site: same-site
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 Edg/112.0.1722.48
+x-csrf-token: sgOiXxdWFNBq the get reqeuest needs to use the same request headers and then pull the x-csrf-token using beautiful soup as it does in https://github.com/NotNice6109/roblox-checker/blob/main/main.py and here is the payload data for the post request {"ctype":"Username","cvalue":"<username>","password":"<password>"} and you need to make sure to ask the user if they are using proxys or proxyless and if they are captcha or captchaless and the request headers for the post need to get the x-csrf-token from the get request its the whole point of the get request think of this project like an openbullet config but for roblox it needs to act the same.
